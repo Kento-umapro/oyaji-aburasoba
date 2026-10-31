@@ -96,7 +96,7 @@ h1 em,h2 em,h3 em{white-space:nowrap}
 .hero .ph{position:absolute;inset:-4%;z-index:0}
 .hero .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
 .hero .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 62%,transparent 40%,rgba(11,10,9,.85) 100%),linear-gradient(180deg,rgba(11,10,9,.85),transparent 35%,transparent 75%,rgba(11,10,9,.95))}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;filter:blur(2px)}
 .hero .ttl{position:absolute;z-index:3;left:0;right:0;top:calc(84px + env(safe-area-inset-top,0px));text-align:center;font-family:var(--f-disp);font-weight:900;font-size:clamp(92px,21vw,330px);line-height:.9;letter-spacing:.02em;margin:0;color:var(--paper);text-shadow:0 20px 60px rgba(0,0,0,.6);pointer-events:none}
 .hero .ttl .ch{display:inline-block}
 .hero .vt{position:absolute;z-index:3;left:var(--gl);top:50%;transform:translateY(-30%);writing-mode:vertical-rl;font-family:var(--f-disp);font-weight:900;font-size:clamp(22px,2.4vw,34px);letter-spacing:.3em;display:flex;align-items:center;gap:18px}
@@ -106,7 +106,7 @@ h1 em,h2 em,h3 em{white-space:nowrap}
 .hero .stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
 .hero .stamp text{font-family:var(--f-num);font-size:11px;letter-spacing:4.6px;fill:var(--paper)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hero .bot{position:absolute;z-index:4;left:var(--gl);right:var(--gr);bottom:calc(28px + env(safe-area-inset-bottom,0px));display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero .bot{position:absolute;z-index:4;left:var(--gl);right:var(--gr);bottom:calc(64px + env(safe-area-inset-bottom,0px));display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .price{display:flex;align-items:flex-end;gap:14px}
 .price .tag{writing-mode:vertical-rl;font-family:var(--f-disp);font-weight:900;background:var(--red);color:var(--paper);padding:12px 7px;font-size:18px;letter-spacing:.24em;line-height:1}
 .price .pl{font-family:var(--f-disp);font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--mute);line-height:1.5}
