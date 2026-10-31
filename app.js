@@ -25,9 +25,12 @@ function split(el){
     Array.prototype.slice.call(node.childNodes).forEach(function(n){
       if(n.nodeType===3){
         var frag=document.createDocumentFragment();
+        var last=null;
         Array.from(n.textContent).forEach(function(c){
-          if(/\s/.test(c)){frag.appendChild(document.createTextNode(c));return;}
-          var s=document.createElement("span");s.className="ch";s.textContent=c;frag.appendChild(s);out.push(s);
+          if(/\s/.test(c)){frag.appendChild(document.createTextNode(c));last=null;return;}
+          /* punctuation sticks to the previous char so it never starts a line alone */
+          if(last&&/[\u3001\u3002\uFF0C\uFF0E\uFF01\uFF1F\u300D\u300F\uFF09!?]/.test(c)){last.textContent+=c;return;}
+          var s=document.createElement("span");s.className="ch";s.textContent=c;frag.appendChild(s);out.push(s);last=s;
         });
         node.replaceChild(frag,n);
       }else if(n.nodeType===1&&n.tagName!=="BR"&&!n.classList.contains("nosplit")){walk(n);}
